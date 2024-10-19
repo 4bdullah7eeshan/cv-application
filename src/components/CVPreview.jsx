@@ -51,6 +51,6 @@ function CVPreview({ userData }) {
             <br />
         </section>
     );
-}
+};
 
 export default CVPreview;

@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { PDFDownloadLink } from '@react-pdf/renderer';
+import CVToPDF from './CVToPDF';
 
 function UserInput({ userData, handleInputChange, handleArrayInputChange, addNewSection, removeSection }) {
     const { name, email, phone, education, experience } = userData;
@@ -10,6 +12,11 @@ function UserInput({ userData, handleInputChange, handleArrayInputChange, addNew
     return (
         <section className="user-input">
             <h2>Form</h2>
+            <div>
+                <PDFDownloadLink document={<CVToPDF userData={userData} />} fileName="cv.pdf">
+                    {({ loading }) => (loading ? 'Loading document...' : 'Download PDF')}
+                </PDFDownloadLink>
+            </div>
             <form>
                 <fieldset>
                     <legend onClick={() => setIsGeneralInfoOpen(!isGeneralInfoOpen)} style={{ cursor: 'pointer' }}>
@@ -166,6 +173,7 @@ function UserInput({ userData, handleInputChange, handleArrayInputChange, addNew
                     )}
                 </fieldset>
             </form>
+
         </section>
     );
 }
