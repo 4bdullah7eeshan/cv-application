@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-solid-svg-icons';
+
 function Footer() {
     return (
         <footer>
@@ -5,7 +8,7 @@ function Footer() {
                 <p>Copyright &copy; Abdullah Zeeshan 2024</p>
             </div>
             <div>
-                <a href="https://github.com/4bdullah7eeshan" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://github.com/4bdullah7eeshan" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} /></a>
             </div>
         </footer>
     );
