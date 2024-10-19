@@ -13,10 +13,25 @@ function Main() {
             [name]: value,
         }));
     };
+
+    const handleArrayInputChange = (e, section, index) => {
+        const { name, value } = e.target;
+        setUserData((prevData) => {
+            const updatedSection = [...prevData[section]];
+            updatedSection[index] = {
+                ...updatedSection[index],
+                [name]: value,
+            };
+            return {
+                ...prevData,
+                [section]: updatedSection,
+            };
+        });
+    };
     
     return (
         <main>
-            <UserInput userData={userData} handleInputChange={handleInputChange} />
+            <UserInput userData={userData} handleInputChange={handleInputChange} handleArrayInputChange={handleArrayInputChange} />
             <CVPreview userData={userData} />
         </main>
     );
