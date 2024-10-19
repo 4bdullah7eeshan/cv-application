@@ -14,8 +14,8 @@ function Main() {
     
     return (
         <main>
-            <UserInput />
-            <CVPreview />
+            <UserInput userData={userData} />
+            <CVPreview userData={userData} />
         </main>
     );
 }
