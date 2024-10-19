@@ -1,7 +1,7 @@
 function CVPreview() {
     return (
         <>
-        
+            <h2>CV</h2>
         </>
     );
 }
