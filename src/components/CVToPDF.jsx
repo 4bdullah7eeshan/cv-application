@@ -1,22 +1,53 @@
-import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+import { Page, Text, View, Document, StyleSheet, Font } from '@react-pdf/renderer';
 
+Font.register({
+    family: 'Spectral',
+    fonts: [
+        { src: '/fonts/Spectral/Spectral-Regular.ttf' },
+        { src: '/fonts/Spectral/Spectral-Bold.ttf', fontWeight: 'bold' },
+        { src: '/fonts/Spectral/Spectral-Italic.ttf', fontStyle: 'italic' }
+
+    ],
+});
+
+Font.register({
+    family: 'Spectral SC',
+    fonts: [
+        { src: '/fonts/Spectral_SC/SpectralSC-Regular.ttf' },
+        { src: '/fonts/Spectral_SC/SpectralSC-Bold.ttf', fontWeight: 'bold' },
+    ],
+});
 
 const styles = StyleSheet.create({
     page: {
         padding: 30,
-        fontFamily: 'Helvetica',
+        fontFamily: 'Spectral',
         fontSize: 12,
+        lineHeight: 1.5,
     },
     title: {
         fontSize: 24,
         marginBottom: 10,
         textAlign: 'center',
+        fontFamily: 'Spectral SC',
+    },
+    header: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    contact: {
+        display: 'flex',
+        flexDirection: 'row',
+
     },
     sectionTitle: {
         fontSize: 18,
         marginBottom: 5,
         marginTop: 20,
         fontWeight: 'bold',
+        fontFamily: 'Spectral',
     },
     section: {
         marginBottom: 10,
@@ -30,6 +61,16 @@ const styles = StyleSheet.create({
     entryText: {
         marginBottom: 2,
     },
+    horizontalLine: {
+        borderBottomWidth: 1,
+        borderBottomColor: 'black',
+        marginVertical: 10,
+    },
+    fr: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
 });
 
 const CVToPDF = ({ userData }) => {
@@ -37,18 +78,27 @@ const CVToPDF = ({ userData }) => {
 
     return (
         <Document>
-            <Page size="A4" style={{ padding: 30 }}>
+            <Page size="A4" style={styles.page}>
                 <View>
-                    <Text style={styles.title}>{name}</Text>
-                    <Text>{email}</Text>
-                    <Text>{phone}</Text>
+                    <View style={styles.header}>
+                        <Text style={styles.title}>{name}</Text>
+                        <View style={styles.contact}>
+                            <Text style={{ marginRight: 10 }}>{email}</Text>
+                            <Text>{phone}</Text>
+                        </View>
+                    </View>
+
+                    <View style={styles.horizontalLine} /> {/* Horizontal line */}
+
                     <Text style={styles.sectionTitle}>EDUCATION</Text>
                     {education.length > 0 ? (
                         education.map((edu, index) => (
                             <View key={index} style={styles.entry}>
                                 <Text style={styles.entryTitle}>{edu.school}</Text>
-                                <Text style={styles.entryText}>{edu.title}</Text>
-                                <Text style={styles.entryText}>{edu.date}</Text>
+                                <View style={styles.fr}>
+                                    <Text style={[styles.entryText, { fontStyle: 'italic' }]}>{edu.title}</Text>
+                                    <Text style={styles.entryText}>{edu.date}</Text>
+                                </View>
                             </View>
                         ))
                     ) : (
@@ -59,9 +109,11 @@ const CVToPDF = ({ userData }) => {
                         experience.map((exp, index) => (
                             <View key={index} style={styles.entry}>
                                 <Text style={styles.entryTitle}>{exp.company}</Text>
-                                <Text style={styles.entryText}>{exp.position}</Text>
-                                <Text style={styles.entryTitle}>{exp.fromDate} - {exp.toDate}</Text>
-                                <Text style={styles.entryTitle}>{exp.responsibilities}</Text>
+                                <View style={styles.fr}>
+                                    <Text style={[styles.entryText, { fontStyle: 'italic' }]}>{exp.position}</Text>
+                                    <Text style={styles.entryText}>{exp.fromDate} - {exp.toDate}</Text>
+                                </View>
+                                <Text style={styles.entryText}>{exp.responsibilities}</Text>
                             </View>
                         ))
                     ) : (
