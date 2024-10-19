@@ -40,10 +40,20 @@ function Main() {
             ],
         }));
     };
+
+    const removeSection = (section, index) => {
+        setUserData((prevData) => {
+            const updatedSection = prevData[section].filter((_, i) => i !== index);
+            return {
+                ...prevData,
+                [section]: updatedSection,
+            };
+        });
+    };
     
     return (
         <main>
-            <UserInput userData={userData} handleInputChange={handleInputChange} handleArrayInputChange={handleArrayInputChange} addNewSection={addNewSection} />
+            <UserInput userData={userData} handleInputChange={handleInputChange} handleArrayInputChange={handleArrayInputChange} addNewSection={addNewSection} removeSection={removeSection} />
             <CVPreview userData={userData} />
         </main>
     );

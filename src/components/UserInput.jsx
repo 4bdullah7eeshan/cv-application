@@ -1,4 +1,4 @@
-function UserInput({ userData, handleInputChange, handleArrayInputChange, addNewSection }) {
+function UserInput({ userData, handleInputChange, handleArrayInputChange, addNewSection, removeSection }) {
     const { name, email, phone, education, experience } = userData;
     return (
         <section className="user-input">
@@ -60,6 +60,12 @@ function UserInput({ userData, handleInputChange, handleArrayInputChange, addNew
                                     onChange={(e) => handleArrayInputChange(e, 'education', index)}
                                 />
                             </div>
+
+                            {index > 0 && (
+                                <button type="button" onClick={() => removeSection('education', index)}>
+                                    Cancel
+                                </button>
+                            )}
                         </div>
                     ))}
                     <button type="button" onClick={() => addNewSection('education')}>
@@ -124,6 +130,12 @@ function UserInput({ userData, handleInputChange, handleArrayInputChange, addNew
                                     onChange={(e) => handleArrayInputChange(e, 'experience', index)}
                                 />
                             </div>
+
+                            {index > 0 && (
+                                <button type="button" onClick={() => removeSection('experience', index)}>
+                                    Cancel
+                                </button>
+                            )}
                         </div>
                     ))}
 
