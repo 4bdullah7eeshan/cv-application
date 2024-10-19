@@ -7,6 +7,7 @@ function CVPreview({ userData }) {
                 <h1>{name}</h1>
                 <div className="resume-contact-info">
                     <p>{email}</p>
+                    <p> | </p>
                     <p>{phone}</p>
                 </div>
 
@@ -28,7 +29,7 @@ function CVPreview({ userData }) {
                     <p>No education details provided</p>
                 )}
             </div>
-
+            <br />
             <div className="resume-experience-section">
                 <h3>EXPERIENCE</h3>
                 {experience.length > 0 ? (
@@ -46,6 +47,7 @@ function CVPreview({ userData }) {
                     <p>No experience details provided</p>
                 )}
             </div>
+            <br />
         </section>
     );
 }

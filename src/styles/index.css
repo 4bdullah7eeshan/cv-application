@@ -50,6 +50,26 @@ main {
     max-width: 50%;
 }
 
+.resume-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.resume-contact-info {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.fr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 footer {
     display: flex;
     flex-direction: row;
