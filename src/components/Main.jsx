@@ -1,15 +1,10 @@
 import { useState } from 'react';
 import UserInput from "./UserInput";
 import CVPreview from "./CVPreview";
+import sampleCV from '../data/sampleCV';
 
 function Main() {
-    const [userData, setUserData] = useState({
-        name: '',
-        email: '',
-        phone: '',
-        education: [],
-        experience: [],
-    });
+    const [userData, setUserData] = useState(sampleCV);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target; // Here name is the HTML attribute from input element
