@@ -53,7 +53,7 @@ function Main() {
     
     return (
         <main>
-            <UserInput userData={userData} handleInputChange={handleInputChange} handleArrayInputChange={handleArrayInputChange} addNewSection={addNewSection} removeSection={removeSection} />
+            <UserInput userData={userData} handleInputChange={handleInputChange} handleArrayInputChange={handleArrayInputChange} addNewSection={addNewSection} removeSection={removeSection} setUserData={setUserData}/>
             <CVPreview userData={userData} />
         </main>
     );

@@ -3,7 +3,7 @@ import { mdiFileAccount } from '@mdi/js';
 
 function Header() {
     return (
-        <header>
+        <header className='logo'>
             <h1>
                 <Icon path={mdiFileAccount} size={1} /> CV Application
             </h1>

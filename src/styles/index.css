@@ -46,16 +46,14 @@ body, #root {
     display: flex;
     flex-direction: column;
     line-height: 1.5;
-    
 }
 
-header {
+.logo {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 0.5rem;
-    outline: 1px solid black; /* Change it as needed */
     text-align: center;
     background-color: #7e0511;
     color: #e1cd90;
@@ -65,12 +63,12 @@ main {
     flex-grow: 1;
     display: flex;
     flex-direction: row;
+    padding: 1rem;
 }
 
 .user-input, .cv-preview {
     flex: 1;
     padding: 1rem;
-    outline: 1px solid black;
 }
 
 .user-input {
@@ -78,6 +76,13 @@ main {
     height: 100%;
     overflow-y: auto;
     width: 50vw;
+}
+
+.user-input header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 fieldset {
@@ -106,6 +111,8 @@ form button {
     background-color: #7e0511;
     color: #e1cd90;
     padding: 0.25rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 form .plus {
@@ -133,7 +140,6 @@ form button:hover {
     display: block;
     white-space: initial;
     font-family: 'Spectral';
-
 }
 
 .resume-header {

@@ -4,22 +4,45 @@ import Icon from '@mdi/react';
 import { mdiDeleteOutline } from '@mdi/js';
 import { mdiPlusCircleOutline } from '@mdi/js';
 import CVToPDF from './CVToPDF';
+import sampleCV from '../data/sampleCV';
 
-function UserInput({ userData, handleInputChange, handleArrayInputChange, addNewSection, removeSection }) {
+function UserInput({ userData, handleInputChange, handleArrayInputChange, addNewSection, removeSection, setUserData }) {
     const { name, email, phone, education, experience } = userData;
     
     const [isGeneralInfoOpen, setIsGeneralInfoOpen] = useState(true);
     const [isEducationOpen, setIsEducationOpen] = useState(true);
     const [isExperienceOpen, setIsExperienceOpen] = useState(true);
 
+    const clearForm = () => {
+        setUserData({
+            name: '',
+            email: '',
+            phone: '',
+            education: [{ school: '', title: '', date: '' }],
+            experience: [{ company: '', position: '', responsibilities: '', fromDate: '', toDate: '' }],
+        });
+    };
+
+    const loadDefaultData = () => {
+        setUserData(sampleCV);
+    };
+
     return (
         <section className="user-input">
-            <h2>Form</h2>
-            <div>
-                <PDFDownloadLink document={<CVToPDF userData={userData} />} fileName="cv.pdf">
-                    {({ loading }) => (loading ? 'Loading document...' : 'Download PDF')}
-                </PDFDownloadLink>
-            </div>
+            <header>
+                <h2>Form</h2>
+                <div>
+                    <PDFDownloadLink document={<CVToPDF userData={userData} />} fileName="cv.pdf">
+                        {({ loading }) => (loading ? 'Loading document...' : 'Download PDF')}
+                    </PDFDownloadLink>
+                    <button type="button" onClick={clearForm} className="clear-btn">
+                        Clear Form
+                    </button>
+                    <button type="button" onClick={loadDefaultData} className="load-btn">
+                        Load Default Data
+                    </button>
+                </div>
+            </header>
             <form>
                 <fieldset>
                     <legend onClick={() => setIsGeneralInfoOpen(!isGeneralInfoOpen)} style={{ cursor: 'pointer' }}>
@@ -149,12 +172,16 @@ function UserInput({ userData, handleInputChange, handleArrayInputChange, addNew
 
                                     <div>
                                         <label htmlFor={`responsibilities-${index}`}>Responsibilities:</label>
-                                        <textarea
-                                            id={`responsibilities-${index}`}
-                                            name="responsibilities"
-                                            value={exp.responsibilities}
-                                            onChange={(e) => handleArrayInputChange(e, 'experience', index)}
-                                        />
+                                        <div>
+                                            <textarea
+                                                id={`responsibilities-${index}`}
+                                                name="responsibilities"
+                                                value={exp.responsibilities}
+                                                rows='10'
+                                                cols='50'
+                                                onChange={(e) => handleArrayInputChange(e, 'experience', index)}
+                                            />
+                                        </div>
                                     </div>
 
                                     <div>
