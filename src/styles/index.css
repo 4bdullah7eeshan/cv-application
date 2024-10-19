@@ -46,16 +46,24 @@ main {
     max-width: 50%;
     height: 100%;
     overflow-y: auto;
+    width: 50vw;
 }
 
 .cv-preview {
     max-width: 50%;
-    height: 100vh; /* Set a fixed height */
+    height: 100vh;
+    width: 50vw;
     overflow-y: auto;
     padding: 1rem;
     outline: 1px solid black;
     white-space: nowrap;
     text-overflow: ellipsis;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    display: block;
+    white-space: initial;
+
 }
 
 .resume-header {
