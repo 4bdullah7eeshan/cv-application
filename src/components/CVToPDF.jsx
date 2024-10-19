@@ -45,7 +45,6 @@ const styles = StyleSheet.create({
     sectionTitle: {
         fontSize: 18,
         marginBottom: 5,
-        marginTop: 20,
         fontWeight: 'bold',
         fontFamily: 'Spectral',
     },
