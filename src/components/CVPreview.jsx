@@ -40,7 +40,7 @@ function CVPreview({ userData }) {
                                 <p>{exp.fromDate} - {exp.toDate}</p>
                             </div>
                             <p><em>{exp.position}</em></p>
-                            <p><strong>Responsibilities:</strong> {exp.responsibilities}</p>
+                            <p>{exp.responsibilities}</p>
                         </div>
                     ))
                 ) : (
