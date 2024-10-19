@@ -32,6 +32,22 @@ header {
 main {
     flex-grow: 1;
     padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.user-input, .cv-preview {
+    flex: 1;
+    padding: 1rem;
+    outline: 1px solid black;
+}
+
+.user-input {
+    max-width: 50%;
+}
+
+.cv-preview {
+    max-width: 50%;
 }
 
 footer {

@@ -1,6 +1,6 @@
 function UserInput() {
     return (
-        <section>
+        <section className="user-input">
             <h2>Form</h2>
         </section>
     );
