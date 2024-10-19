@@ -28,10 +28,22 @@ function Main() {
             };
         });
     };
+
+    const addNewSection = (section) => {
+        setUserData((prevData) => ({
+            ...prevData,
+            [section]: [
+                ...prevData[section],
+                section === 'education'
+                    ? { school: '', title: '', date: '' }
+                    : { company: '', position: '', responsibilities: '', fromDate: '', toDate: '' },
+            ],
+        }));
+    };
     
     return (
         <main>
-            <UserInput userData={userData} handleInputChange={handleInputChange} handleArrayInputChange={handleArrayInputChange} />
+            <UserInput userData={userData} handleInputChange={handleInputChange} handleArrayInputChange={handleArrayInputChange} addNewSection={addNewSection} />
             <CVPreview userData={userData} />
         </main>
     );

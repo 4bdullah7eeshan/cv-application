@@ -1,4 +1,4 @@
-function UserInput({ userData, handleInputChange, handleArrayInputChange }) {
+function UserInput({ userData, handleInputChange, handleArrayInputChange, addNewSection }) {
     const { name, email, phone, education, experience } = userData;
     return (
         <section className="user-input">
@@ -62,6 +62,9 @@ function UserInput({ userData, handleInputChange, handleArrayInputChange }) {
                             </div>
                         </div>
                     ))}
+                    <button type="button" onClick={() => addNewSection('education')}>
+                        Add Education
+                    </button>
                 </fieldset>
 
                 <fieldset>
@@ -123,6 +126,10 @@ function UserInput({ userData, handleInputChange, handleArrayInputChange }) {
                             </div>
                         </div>
                     ))}
+
+                    <button type="button" onClick={() => addNewSection('experience')}>
+                        Add Experience
+                    </button>
                 </fieldset>
             </form>
         </section>
