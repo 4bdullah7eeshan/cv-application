@@ -1,4 +1,4 @@
-function UserInput({ userData }) {
+function UserInput({ userData, handleInputChange }) {
     const { name, email, phone, education, experience } = userData;
     return (
         <section className="user-input">
@@ -9,17 +9,17 @@ function UserInput({ userData }) {
                     
                     <div>
                         <label htmlFor="name">Name:</label>
-                        <input type="text" id="name" name="name" value={name} />
+                        <input type="text" id="name" name="name" value={name} onChange={handleInputChange} />
                     </div>
 
                     <div>
                         <label htmlFor="email">Email:</label>
-                        <input type="email" id="email" name="email" value={email} />
+                        <input type="email" id="email" name="email" value={email} onChange={handleInputChange} />
                     </div>
 
                     <div>
                         <label htmlFor="phone">Phone:</label>
-                        <input type="tel" id="phone" name="phone" value={phone} />
+                        <input type="tel" id="phone" name="phone" value={phone} onChange={handleInputChange} />
                     </div>
                 </fieldset>
 
@@ -28,17 +28,17 @@ function UserInput({ userData }) {
 
                     <div>
                         <label htmlFor="school">School Name:</label>
-                        <input type="text" id="school" name="school" />
+                        <input type="text" id="school" name="school" onChange={handleInputChange} />
                     </div>
 
                     <div>
                         <label htmlFor="title">Title of Study:</label>
-                        <input type="text" id="title" name="title" />
+                        <input type="text" id="title" name="title" onChange={handleInputChange} />
                     </div>
 
                     <div>
                         <label htmlFor="date">Date of Study:</label>
-                        <input type="text" id="date" name="date"/>
+                        <input type="text" id="date" name="date" onChange={handleInputChange} />
                     </div>
                 </fieldset>
 
@@ -47,29 +47,29 @@ function UserInput({ userData }) {
 
                     <div>
                         <label htmlFor="company">Company Name:</label>
-                        <input type="text" id="company" name="company" />
+                        <input type="text" id="company" name="company" onChange={handleInputChange} />
                     </div>
 
                     <div>
                         <label htmlFor="position">Position Title:</label>
-                        <input type="text" id="position" name="position" />
+                        <input type="text" id="position" name="position" onChange={handleInputChange} />
                     </div>
 
                     <div>
                         <label htmlFor="responsibilities">Responsibilities:</label>
                         <div>
-                            <textarea name="responsibilities" id="responsibilities"></textarea>
+                            <textarea name="responsibilities" id="responsibilities" onChange={handleInputChange} ></textarea>
                         </div>
                     </div>
 
                     <div>
                         <label htmlFor="dateFrom">Date From:</label>
-                        <input type="text" id="dateFrom" name="dateFrom" />
+                        <input type="text" id="dateFrom" name="dateFrom" onChange={handleInputChange} />
                     </div>
                     
                     <div>
                         <label htmlFor="dateUntil">Date Until:</label>
-                        <input type="text" id="dateUntil" name="dateUntil" />
+                        <input type="text" id="dateUntil" name="dateUntil" onChange={handleInputChange} />
                     </div>
                 </fieldset>
             </form>

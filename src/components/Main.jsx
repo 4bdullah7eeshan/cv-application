@@ -11,10 +11,17 @@ function Main() {
         experience: [],
     });
 
+    const handleInputChange = (e) => {
+        const { name, value } = e.target; // Here name is the HTML attribute from input element
+        setUserData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
     
     return (
         <main>
-            <UserInput userData={userData} />
+            <UserInput userData={userData} handleInputChange={handleInputChange} />
             <CVPreview userData={userData} />
         </main>
     );
