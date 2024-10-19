@@ -101,22 +101,22 @@ function UserInput({ userData, handleInputChange, handleArrayInputChange }) {
                             </div>
 
                             <div>
-                                <label htmlFor={`dateFrom-${index}`}>Date From:</label>
+                                <label htmlFor={`fromDate-${index}`}>Date From:</label>
                                 <input
                                     type="text"
-                                    id={`dateFrom-${index}`}
-                                    name="dateFrom"
+                                    id={`fromDate-${index}`}
+                                    name="fromDate"
                                     value={exp.fromDate}
                                     onChange={(e) => handleArrayInputChange(e, 'experience', index)}
                                 />
                             </div>
                             
                             <div>
-                                <label htmlFor={`dateUntil-${index}`}>Date Until:</label>
+                                <label htmlFor={`toDate-${index}`}>Date Until:</label>
                                 <input
                                     type="text"
-                                    id={`dateUntil-${index}`}
-                                    name="dateUntil"
+                                    id={`toDate-${index}`}
+                                    name="toDate"
                                     value={exp.toDate}
                                     onChange={(e) => handleArrayInputChange(e, 'experience', index)}
                                 />
