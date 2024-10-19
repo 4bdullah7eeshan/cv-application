@@ -18,11 +18,12 @@ function CVPreview({ userData }) {
                 {education.length > 0 ? (
                     education.map((edu, index) => (
                         <div key={index}>
+                            <p><strong>{edu.school}</strong></p>
                             <div className="fr">
-                                <p><strong>{edu.school}</strong></p>
+                                <p><em>{edu.title}</em></p>
                                 <p>{edu.date}</p>
                             </div>
-                            <p><em>{edu.title}</em></p>
+                            
                         </div>
                     ))
                 ) : (
@@ -35,11 +36,11 @@ function CVPreview({ userData }) {
                 {experience.length > 0 ? (
                     experience.map((exp, index) => (
                         <div key={index}>
+                            <p><strong>{exp.company}</strong></p>
                             <div className="fr">
-                                <p><strong>{exp.company}</strong></p>
+                                <p><em>{exp.position}</em></p>
                                 <p>{exp.fromDate} - {exp.toDate}</p>
                             </div>
-                            <p><em>{exp.position}</em></p>
                             <p>{exp.responsibilities}</p>
                         </div>
                     ))
