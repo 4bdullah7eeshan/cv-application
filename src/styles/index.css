@@ -80,6 +80,30 @@ main {
     width: 50vw;
 }
 
+fieldset {
+    background-color: #f4f2e9;
+    padding: 0.5rem;
+}
+
+legend {
+    color: #7e0511;
+}
+
+form input {
+    width: 20rem;
+}
+
+form button {
+    background-color: #7e0511;
+    color: #e1cd90;
+    padding: 0.5rem;
+}
+
+form button:hover {
+    background-color: #e1cd90;
+    color: #7e0511;
+}
+
 .cv-preview {
     max-width: 50%;
     height: 100vh;
