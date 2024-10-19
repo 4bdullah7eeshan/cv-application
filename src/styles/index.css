@@ -153,4 +153,10 @@ footer {
     align-items: center;
     padding: 0.5rem;
     outline: 1px solid black; /* Change it as needed */
+    background-color: #282a2b;
+    color: white;
+}
+
+footer a {
+    color: white
 }
