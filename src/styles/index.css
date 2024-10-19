@@ -93,15 +93,29 @@ form input {
     width: 20rem;
 }
 
+.del-btn {
+    display: flex;
+    justify-content: right;
+}
+.add-btn {
+    display: flex;
+    justify-content: center;
+}
+
 form button {
     background-color: #7e0511;
     color: #e1cd90;
-    padding: 0.5rem;
+    padding: 0.25rem;
+}
+
+form .plus {
+    background-color: #5c6330;
+    color: white;
+    float: cent;
 }
 
 form button:hover {
-    background-color: #e1cd90;
-    color: #7e0511;
+    filter: brightness(0.9);
 }
 
 .cv-preview {

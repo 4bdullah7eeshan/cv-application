@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import { PDFDownloadLink } from '@react-pdf/renderer';
+import Icon from '@mdi/react';
+import { mdiDeleteOutline } from '@mdi/js';
+import { mdiPlusCircleOutline } from '@mdi/js';
 import CVToPDF from './CVToPDF';
 
 function UserInput({ userData, handleInputChange, handleArrayInputChange, addNewSection, removeSection }) {
@@ -51,6 +54,9 @@ function UserInput({ userData, handleInputChange, handleArrayInputChange, addNew
                             {education.map((edu, index) => (
                                 <div key={index}>
                                     <div>
+                                        <p><em>Education {index + 1}</em></p>
+                                    </div>
+                                    <div>
                                         <label htmlFor={`school-${index}`}>School Name:</label>
                                         <input
                                             type="text"
@@ -83,16 +89,26 @@ function UserInput({ userData, handleInputChange, handleArrayInputChange, addNew
                                         />
                                     </div>
 
+                            
+                                    
+
                                     {index > 0 && (
-                                        <button type="button" onClick={() => removeSection('education', index)}>
-                                            Cancel
-                                        </button>
+                                        <div className='del-btn'>
+                                            <button type="button" onClick={() => removeSection('education', index)}>
+                                                <Icon path={mdiDeleteOutline} size={1} />
+                                            </button>
+                                        </div>
                                     )}
+                                    <div>
+                                        <hr />
+                                    </div>
                                 </div>
                             ))}
-                            <button type="button" onClick={() => addNewSection('education')}>
-                                Add Education
-                            </button>
+                            <div className='add-btn'>
+                                <button className='plus' type="button" onClick={() => addNewSection('education')}>
+                                    <Icon path={mdiPlusCircleOutline} size={1} />
+                                </button>
+                            </div>
                         </div>
                     )}
                 </fieldset>
@@ -105,6 +121,10 @@ function UserInput({ userData, handleInputChange, handleArrayInputChange, addNew
                         <div>
                             {experience.map((exp, index) => (
                                 <div key={index}>
+                                    <div>
+                                        <p><em>Experience {index + 1}</em></p>
+                                    </div>
+
                                     <div>
                                         <label htmlFor={`company-${index}`}>Company Name:</label>
                                         <input
@@ -160,15 +180,23 @@ function UserInput({ userData, handleInputChange, handleArrayInputChange, addNew
                                     </div>
 
                                     {index > 0 && (
-                                        <button type="button" onClick={() => removeSection('experience', index)}>
-                                            Cancel
-                                        </button>
+                                        <div className='del-btn'>
+                                            <button type="button" onClick={() => removeSection('experience', index)}>
+                                                <Icon path={mdiDeleteOutline} size={1} />
+                                            </button>
+                                        </div>
                                     )}
+                                    <div>
+                                        <hr />
+                                    </div>
                                 </div>
+                                
                             ))}
-                            <button type="button" onClick={() => addNewSection('experience')}>
-                                Add Experience
-                            </button>
+                            <div className='add-btn'>
+                                <button className='plus' type="button" onClick={() => addNewSection('experience')}>
+                                    <Icon path={mdiPlusCircleOutline} size={1} />
+                                </button>
+                            </div>
                         </div>
                     )}
                 </fieldset>
