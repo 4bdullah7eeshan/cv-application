@@ -48,6 +48,7 @@ body, #root {
     line-height: 1.5;
 }
 
+
 .logo {
     display: flex;
     flex-direction: row;
@@ -64,6 +65,7 @@ main {
     display: flex;
     flex-direction: row;
     padding: 1rem;
+    background-color: #fafafa;
 }
 
 .user-input, .cv-preview {
@@ -84,6 +86,34 @@ main {
     justify-content: center;
     align-items: center;
 }
+
+.wizard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.styled-button a,
+.clear-btn,
+.load-btn {
+    padding: 0.5rem 0.75rem;
+    background-color: #b6a265;
+    color: white;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    text-decoration: none; /* Ensures no underline */
+}
+
+.styled-button a:hover,
+.clear-btn:hover,
+.load-btn:hover {
+    filter: brightness(0.9);
+}
+
 
 fieldset {
     background-color: #f4f2e9;
@@ -140,6 +170,8 @@ form button:hover {
     display: block;
     white-space: initial;
     font-family: 'Spectral';
+    background-color: white;
+    box-shadow: 5px 5px 5px #9c9c9c;
 }
 
 .resume-header {

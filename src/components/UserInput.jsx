@@ -30,11 +30,12 @@ function UserInput({ userData, handleInputChange, handleArrayInputChange, addNew
     return (
         <section className="user-input">
             <header>
-                <h2>Form</h2>
-                <div>
-                    <PDFDownloadLink document={<CVToPDF userData={userData} />} fileName="cv.pdf">
-                        {({ loading }) => (loading ? 'Loading document...' : 'Download PDF')}
-                    </PDFDownloadLink>
+                <div className='wizard'>
+                    <span className="styled-button">
+                        <PDFDownloadLink document={<CVToPDF userData={userData} />} fileName="cv.pdf">
+                            {({ loading }) => (loading ? 'Loading document...' : 'Download PDF')}
+                        </PDFDownloadLink>
+                    </span>
                     <button type="button" onClick={clearForm} className="clear-btn">
                         Clear Form
                     </button>
