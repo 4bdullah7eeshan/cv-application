@@ -5,7 +5,7 @@ function Header() {
     return (
         <header className='logo'>
             <h1>
-                <Icon path={mdiFileAccount} size={1} /> CV Application
+                <Icon path={mdiFileAccount} size={2} /> CV Application
             </h1>
         </header>
     );

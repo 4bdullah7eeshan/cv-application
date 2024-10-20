@@ -1,12 +1,9 @@
-/* reset.css
-   Generic reset and a template
-*/
+/* index.css */
+
+/* Fonts */
 
 @import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=WindSong:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Meddon&display=swap');
-
-
 
 @font-face {
     font-family: 'Spectral';
@@ -37,7 +34,6 @@
 }
 
 
-
 * {
     margin: 0;
     padding: 0;
@@ -54,7 +50,6 @@ body, #root {
     flex-direction: column;
     line-height: 1.5;
 }
-
 
 .logo {
     display: flex;
@@ -109,6 +104,7 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     gap: 2rem;
+    margin-bottom: 1rem;
 }
 
 .styled-button a,
@@ -122,7 +118,7 @@ footer {
     cursor: pointer;
     display: inline-block;
     font-size: 16px;
-    text-decoration: none; /* Ensures no underline */
+    text-decoration: none;
 }
 
 .styled-button a:hover,
@@ -130,7 +126,6 @@ footer {
 .load-btn:hover {
     filter: brightness(0.9);
 }
-
 
 fieldset {
     background-color: #f4f2e9;
@@ -215,14 +210,12 @@ form button:hover {
     justify-content: space-between;
 }
 
-
 footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem;
-    outline: 1px solid black; /* Change it as needed */
     background-color: #282a2b;
     color: white;
 }
@@ -231,22 +224,22 @@ footer a {
     color: white
 }
 
+/* Font Sizes */
 
-  
 h1 {
-    font-size: 2.5rem; /* 40px */
+    font-size: 2.5rem;
 }
   
 h2 {
-    font-size: 2rem; /* 32px */
+    font-size: 2rem;
 }
   
 h3 {
-    font-size: 1.75rem; /* 28px */
+    font-size: 1.75rem;
 }
   
 legend {
-    font-size: 1.125rem; /* 18px */
+    font-size: 1.125rem;
 }
 
 label,
@@ -254,7 +247,7 @@ input,
 button,
 p,
 textarea {
-    font-size: 1rem; /* 16px */
+    font-size: 1rem;
 }
 
 input,
@@ -276,5 +269,3 @@ legend {
     display: flex;
     justify-content: space-between;
 }
-
-  
