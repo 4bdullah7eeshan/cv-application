@@ -37,6 +37,22 @@ const sampleCV = {
             toDate: 'Present',
         },
     ],
+    projects: [
+        {
+          title: 'Weather App',
+          description: 'A weather forecasting app using React and the Visual Crossing API.',
+          year: '2023',
+          technologies: ['React', 'API Integration', 'CSS'],
+        },
+        {
+          title: 'Portfolio Website',
+          description: 'A personal portfolio website built using HTML, CSS, and JavaScript.',
+          year: '2022',
+          technologies: ['HTML', 'CSS', 'JavaScript'],
+        },
+    ],
+    skills: ['JavaScript', 'React', 'Node.js', 'HTML', 'CSS', 'Git', 'SQL'],
+    
 };
 
 export default sampleCV;
