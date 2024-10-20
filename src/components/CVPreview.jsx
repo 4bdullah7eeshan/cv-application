@@ -4,7 +4,7 @@ function CVPreview({ userData }) {
     return (
         <section className="cv-preview">
             <div className="resume-header">
-                <h1>{name}</h1>
+                <h2>{name}</h2>
                 <div className="resume-contact-info">
                     <p>{email}</p>
                     <p> | </p>
@@ -14,7 +14,7 @@ function CVPreview({ userData }) {
             </div>
             <hr />
             <div className="resume-education-section">
-                <h3>EDUCATION</h3>
+                <h4>EDUCATION</h4>
                 {education.length > 0 ? (
                     education.map((edu, index) => (
                         <div key={index}>
@@ -32,7 +32,7 @@ function CVPreview({ userData }) {
             </div>
             <br />
             <div className="resume-experience-section">
-                <h3>EXPERIENCE</h3>
+                <h4>EXPERIENCE</h4>
                 {experience.length > 0 ? (
                     experience.map((exp, index) => (
                         <div key={index}>

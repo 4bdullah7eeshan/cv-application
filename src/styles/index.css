@@ -33,6 +33,7 @@
 }
 
 
+
 * {
     margin: 0;
     padding: 0;
@@ -84,10 +85,10 @@ main {
 }
 
 .user-input,
-form,
-input,
-button,
-textarea,
+.user-input form,
+.user-input input,
+.user-input button,
+.user-input textarea,
 footer {
     font-family: 'Philosopher';
 }
@@ -194,7 +195,7 @@ form button:hover {
 
 }
 
-.resume-header h1 {
+.resume-header h2 {
     font-family: 'Spectral SC';
 }
 
@@ -250,3 +251,31 @@ footer {
 footer a {
     color: white
 }
+
+
+  
+h1 {
+    font-size: 2.5rem; /* 40px */
+}
+  
+h2 {
+    font-size: 2rem; /* 32px */
+}
+  
+h3 {
+    font-size: 1.75rem; /* 28px */
+}
+  
+legend {
+    font-size: 1.125rem; /* 18px */
+}
+
+label,
+input,
+button,
+p,
+textarea {
+    font-size: 1rem; /* 16px */
+}
+
+  
