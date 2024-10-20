@@ -7,28 +7,28 @@
 
 @font-face {
     font-family: 'Spectral';
-    src: url('../public/fonts/Spectral/Spectral-Regular.ttf') format('truetype');
+    src: url('/fonts/Spectral/Spectral-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Spectral';
-    src: url('../public/fonts/Spectral/Spectral-Bold.ttf') format('truetype');
+    src: url('/fonts/Spectral/Spectral-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Spectral';
-    src: url('../public/fonts/Spectral/Spectral-Italic.ttf') format('truetype');
+    src: url('/fonts/Spectral/Spectral-Italic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Spectral SC';
-    src: url('../public/fonts/Spectral_SC/SpectralSC-Regular.ttf') format('truetype');
+    src: url('/fonts/Spectral_SC/SpectralSC-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
