@@ -39,7 +39,7 @@ function Main() {
                     : section === 'experience'
                     ? { company: '', position: '', responsibilities: '', fromDate: '', toDate: '' }
                     : section === 'projects'
-                    ? { title: '', description: '', year: '', technologies: [] }
+                    ? { title: '', description: '', technologies: [] }
                     : null,
             ],
         }));

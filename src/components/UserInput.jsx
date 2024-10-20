@@ -271,17 +271,6 @@ function UserInput({ userData, handleInputChange, handleArrayInputChange, addNew
                                     </div>
 
                                     <div>
-                                        <label htmlFor={`project-year-${index}`}>Year:</label>
-                                        <input
-                                            type="text"
-                                            id={`project-year-${index}`}
-                                            name="year"
-                                            value={proj.year}
-                                            onChange={(e) => handleArrayInputChange(e, 'projects', index)}
-                                        />
-                                    </div>
-
-                                    <div>
                                         <label htmlFor={`project-technologies-${index}`}>Technologies:</label>
                                         <input
                                             type="text"
