@@ -54,10 +54,50 @@ function Main() {
             };
         });
     };
+
+    const handleSkillsChange = (e, index) => {
+        const { value } = e.target;
+        setUserData((prevData) => {
+            const updatedSkills = [...prevData.skills];
+            updatedSkills[index] = value;
+            return {
+                ...prevData,
+                skills: updatedSkills,
+            };
+        });
+    };
+    
+    const addNewSkill = () => {
+        setUserData((prevData) => ({
+            ...prevData,
+            skills: [...prevData.skills, ''],
+        }));
+    };
+    
+    const removeSkill = (index) => {
+        setUserData((prevData) => {
+            const updatedSkills = prevData.skills.filter((_, i) => i !== index);
+            return {
+                ...prevData,
+                skills: updatedSkills,
+            };
+        });
+    };
+    
     
     return (
         <main>
-            <UserInput userData={userData} handleInputChange={handleInputChange} handleArrayInputChange={handleArrayInputChange} addNewSection={addNewSection} removeSection={removeSection} setUserData={setUserData}/>
+            <UserInput
+                userData={userData}
+                handleInputChange={handleInputChange}
+                handleArrayInputChange={handleArrayInputChange}
+                addNewSection={addNewSection}
+                removeSection={removeSection}
+                setUserData={setUserData}
+                handleSkillsChange={handleSkillsChange}
+                addNewSkill={addNewSkill}
+                removeSkill={removeSkill}
+            />
             <CVPreview userData={userData} />
         </main>
     );
