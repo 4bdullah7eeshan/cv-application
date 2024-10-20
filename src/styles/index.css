@@ -278,4 +278,14 @@ textarea {
     font-size: 1rem; /* 16px */
 }
 
+input,
+textarea {
+    padding: 0.25rem;
+}
+
+input,
+fieldset {
+    margin-bottom: 0.5rem;
+}
+
   
