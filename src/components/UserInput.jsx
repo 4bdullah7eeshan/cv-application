@@ -71,14 +71,14 @@ function UserInput({ userData, handleInputChange, handleArrayInputChange, addNew
 
                 <fieldset>
                     <legend onClick={() => setIsEducationOpen(!isEducationOpen)} style={{ cursor: 'pointer' }}>
-                        Educational Experience {isEducationOpen ? '▲' : '▼'}
+                        Education {isEducationOpen ? '▲' : '▼'}
                     </legend>
                     {isEducationOpen && (
                         <div>
                             {education.map((edu, index) => (
                                 <div key={index}>
                                     <div>
-                                        <p><em>Education {index + 1}</em></p>
+                                        <p><strong>Education {index + 1}</strong></p>
                                     </div>
                                     <div>
                                         <label htmlFor={`school-${index}`}>School Name:</label>
@@ -139,14 +139,14 @@ function UserInput({ userData, handleInputChange, handleArrayInputChange, addNew
 
                 <fieldset>
                     <legend onClick={() => setIsExperienceOpen(!isExperienceOpen)} style={{ cursor: 'pointer' }}>
-                        Practical Experience {isExperienceOpen ? '▲' : '▼'}
+                        Experience {isExperienceOpen ? '▲' : '▼'}
                     </legend>
                     {isExperienceOpen && (
                         <div>
                             {experience.map((exp, index) => (
                                 <div key={index}>
                                     <div>
-                                        <p><em>Experience {index + 1}</em></p>
+                                        <p><strong>Experience {index + 1}</strong></p>
                                     </div>
 
                                     <div>
