@@ -36,7 +36,11 @@ function Main() {
                 ...prevData[section],
                 section === 'education'
                     ? { school: '', title: '', date: '' }
-                    : { company: '', position: '', responsibilities: '', fromDate: '', toDate: '' },
+                    : section === 'experience'
+                    ? { company: '', position: '', responsibilities: '', fromDate: '', toDate: '' }
+                    : section === 'projects'
+                    ? { title: '', description: '', year: '', technologies: [] }
+                    : null,
             ],
         }));
     };
