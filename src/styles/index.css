@@ -297,4 +297,9 @@ legend {
     font-weight: bold;
 }
 
+.skills-list {
+    display: flex;
+    justify-content: space-between;
+}
+
   

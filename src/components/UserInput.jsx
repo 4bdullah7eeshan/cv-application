@@ -6,12 +6,14 @@ import { mdiPlusCircleOutline } from '@mdi/js';
 import CVToPDF from './CVToPDF';
 import sampleCV from '../data/sampleCV';
 
-function UserInput({ userData, handleInputChange, handleArrayInputChange, addNewSection, removeSection, setUserData }) {
-    const { name, email, phone, education, experience } = userData;
+function UserInput({ userData, handleInputChange, handleArrayInputChange, addNewSection, removeSection, setUserData, handleSkillsChange, addNewSkill, removeSkill }) {
+    const { name, email, phone, education, experience, projects, skills } = userData;
     
     const [isGeneralInfoOpen, setIsGeneralInfoOpen] = useState(true);
     const [isEducationOpen, setIsEducationOpen] = useState(true);
     const [isExperienceOpen, setIsExperienceOpen] = useState(true);
+    const [isProjectsOpen, setIsProjectsOpen] = useState(true);
+    const [isSkillsOpen, setIsSkillsOpen] = useState(true);
 
     const clearForm = () => {
         setUserData({
@@ -20,6 +22,8 @@ function UserInput({ userData, handleInputChange, handleArrayInputChange, addNew
             phone: '',
             education: [{ school: '', title: '', date: '' }],
             experience: [{ company: '', position: '', responsibilities: '', fromDate: '', toDate: '' }],
+            projects: [{ title: '', description: '', year: '', technologies: [] }],
+            skills: [],
         });
     };
 
@@ -228,6 +232,118 @@ function UserInput({ userData, handleInputChange, handleArrayInputChange, addNew
                         </div>
                     )}
                 </fieldset>
+
+                <fieldset>
+                    <legend onClick={() => setIsProjectsOpen(!isProjectsOpen)} style={{ cursor: 'pointer' }}>
+                        Projects {isProjectsOpen ? '▲' : '▼'}
+                    </legend>
+                    {isProjectsOpen && (
+                        <div>
+                            {projects.map((proj, index) => (
+                                <div key={index}>
+                                    <div>
+                                        <p><strong>Project {index + 1}</strong></p>
+                                    </div>
+
+                                    <div>
+                                        <label htmlFor={`project-title-${index}`}>Title:</label>
+                                        <input
+                                            type="text"
+                                            id={`project-title-${index}`}
+                                            name="title"
+                                            value={proj.title}
+                                            onChange={(e) => handleArrayInputChange(e, 'projects', index)}
+                                        />
+                                    </div>
+
+                                    <div>
+                                        <label htmlFor={`project-description-${index}`}>Description:</label>
+                                        <div>
+                                            <textarea
+                                                id={`project-description-${index}`}
+                                                name="description"
+                                                value={proj.description}
+                                                rows="10"
+                                                cols="50"
+                                                onChange={(e) => handleArrayInputChange(e, 'projects', index)}
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label htmlFor={`project-year-${index}`}>Year:</label>
+                                        <input
+                                            type="text"
+                                            id={`project-year-${index}`}
+                                            name="year"
+                                            value={proj.year}
+                                            onChange={(e) => handleArrayInputChange(e, 'projects', index)}
+                                        />
+                                    </div>
+
+                                    <div>
+                                        <label htmlFor={`project-technologies-${index}`}>Technologies:</label>
+                                        <input
+                                            type="text"
+                                            id={`project-technologies-${index}`}
+                                            name="technologies"
+                                            value={proj.technologies.join(', ')}
+                                            onChange={(e) => {
+                                                const techArray = e.target.value.split(',').map(tech => tech.trim());
+                                                handleArrayInputChange({ target: { name: 'technologies', value: techArray } }, 'projects', index);
+                                            }}
+                                        />
+                                    </div>
+
+                                    {index > 0 && (
+                                        <div className='del-btn'>
+                                            <button type="button" onClick={() => removeSection('projects', index)}>
+                                                <Icon path={mdiDeleteOutline} size={1} />
+                                            </button>
+                                        </div>
+                                    )}
+                                    <div>
+                                        <hr />
+                                    </div>
+                                </div>
+                            ))}
+                            <div className='add-btn'>
+                                <button className='plus' type="button" onClick={() => addNewSection('projects')}>
+                                    <Icon path={mdiPlusCircleOutline} size={1} />
+                                </button>
+                            </div>
+                        </div>
+                    )}
+                </fieldset>
+
+                <fieldset>
+                    <legend onClick={() => setIsSkillsOpen(!isSkillsOpen)} style={{ cursor: 'pointer' }}>
+                        Skills {isSkillsOpen ? '▲' : '▼'}
+                    </legend>
+                    {isSkillsOpen && (
+                        <div>
+                            {skills.map((skill, index) => (
+                            <div key={index} className='skills-list'>
+                                <input
+                                    type="text"
+                                    value={skill}
+                                    onChange={(e) => handleSkillsChange(e, index)}
+                                    placeholder={`Skill ${index + 1}`}
+                                />
+                                <button type="button" onClick={() => removeSkill(index)}>
+                                    <Icon path={mdiDeleteOutline} size={1} />
+                                </button>
+                            </div>
+                            ))}
+                            <div className='add-btn'>
+                                <button className='plus' type="button" onClick={addNewSkill}>
+                                    <Icon path={mdiPlusCircleOutline} size={1} />
+                                </button>
+                            </div>
+                        </div>
+                    )}
+                </fieldset>
+
             </form>
 
         </section>
