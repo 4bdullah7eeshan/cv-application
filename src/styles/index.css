@@ -3,6 +3,10 @@
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=WindSong:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Meddon&display=swap');
+
+
 
 @font-face {
     font-family: 'Spectral';
@@ -61,7 +65,7 @@ body, #root {
     text-align: center;
     background-color: #7e0511;
     color: #e1cd90;
-    font-family: 'Philosopher';
+    font-family: 'Meddon';
 }
 
 main {
@@ -286,6 +290,11 @@ textarea {
 input,
 fieldset {
     margin-bottom: 0.5rem;
+}
+
+legend {
+    font-family: 'Meddon', cursive;
+    font-weight: bold;
 }
 
   
