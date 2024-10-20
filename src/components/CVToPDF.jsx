@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
 });
 
 const CVToPDF = ({ userData }) => {
-    const { name, email, phone, education, experience } = userData;
+    const { name, email, phone, education, experience, projects, skills } = userData;
 
     return (
         <Document>
@@ -119,6 +119,27 @@ const CVToPDF = ({ userData }) => {
                         ))
                     ) : (
                         <Text>No experience details provided</Text>
+                    )}
+                    <Text style={[styles.sectionTitle, { marginTop: 15 }]}>PROJECTS</Text>
+                    {projects.length > 0 ? (
+                        projects.map((project, index) => (
+                            <View key={index} style={styles.entry}>
+                                <View style={styles.fr}>
+                                    <Text style={styles.entryTitle}>{project.title}</Text>
+                                    <Text style={[styles.entryText, { fontStyle: 'italic' }]}>{project.technologies.join(', ')}</Text>
+                                </View>
+                                <Text style={styles.entryText}>{project.description}</Text>
+                            </View>
+                        ))
+                    ) : (
+                        <Text>No projects provided</Text>
+                    )}
+
+                    <Text style={[styles.sectionTitle, { marginTop: 15 }]}>SKILLS</Text>
+                    {skills.length > 0 ? (
+                        <Text>{skills.join(', ')}</Text>
+                    ) : (
+                        <Text>No skills provided</Text>
                     )}
                 </View>
             </Page>
