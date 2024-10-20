@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
 
     },
     sectionTitle: {
-        fontSize: 18,
+        fontSize: 15,
         marginBottom: 5,
         fontWeight: 'bold',
         fontFamily: 'Spectral',
@@ -83,6 +83,7 @@ const CVToPDF = ({ userData }) => {
                         <Text style={styles.title}>{name}</Text>
                         <View style={styles.contact}>
                             <Text style={{ marginRight: 10 }}>{email}</Text>
+                            <Text> | </Text>
                             <Text>{phone}</Text>
                         </View>
                     </View>
@@ -103,7 +104,7 @@ const CVToPDF = ({ userData }) => {
                     ) : (
                         <Text>No education details provided</Text>
                     )}
-                    <Text style={styles.sectionTitle}>EXPERIENCE</Text>
+                    <Text style={[styles.sectionTitle, { marginTop: 15 }]}>EXPERIENCE</Text>
                     {experience.length > 0 ? (
                         experience.map((exp, index) => (
                             <View key={index} style={styles.entry}>
