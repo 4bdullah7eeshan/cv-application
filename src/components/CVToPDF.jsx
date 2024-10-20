@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         textAlign: 'center',
         fontFamily: 'Spectral SC',
+        fontWeight: 'bold',
     },
     header: {
         display: 'flex',
