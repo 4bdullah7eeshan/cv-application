@@ -215,31 +215,6 @@ form button:hover {
     justify-content: space-between;
 }
 
-.resume-header,
-.resume-education-section,
-.resume-experience-section {
-    width: 100%;
-}
-
-@media print {
-    body {
-        margin: 0;
-        padding: 0;
-    }
-    
-    .cv-preview {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-    }
-    
-    .resume-header, .resume-education-section, .resume-experience-section {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-    }
-}
-
 
 footer {
     display: flex;
