@@ -2,6 +2,8 @@
    Generic reset and a template
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap');
+
 @font-face {
     font-family: 'Spectral';
     src: url('../public/fonts/Spectral/Spectral-Regular.ttf') format('truetype');
@@ -58,6 +60,7 @@ body, #root {
     text-align: center;
     background-color: #7e0511;
     color: #e1cd90;
+    font-family: 'Philosopher';
 }
 
 main {
@@ -78,6 +81,15 @@ main {
     height: 100%;
     overflow-y: auto;
     width: 50vw;
+}
+
+.user-input,
+form,
+input,
+button,
+textarea,
+footer {
+    font-family: 'Philosopher';
 }
 
 .user-input header {
