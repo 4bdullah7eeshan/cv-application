@@ -1,5 +1,5 @@
 function CVPreview({ userData }) {
-    const { name, email, phone, education, experience } = userData;
+    const { name, email, phone, education, experience, projects, skills } = userData;
 
     return (
         <section className="cv-preview">
@@ -49,6 +49,32 @@ function CVPreview({ userData }) {
                 )}
             </div>
             <br />
+            <div className="resume-projects-section">
+                <h4>PROJECTS</h4>
+                {projects.length > 0 ? (
+                    projects.map((project, index) => (
+                        <div key={index}>
+                            <div className="fr">
+                                <p><strong>{project.title}</strong></p>
+                                <p><em>{project.technologies.join(', ')}</em></p>
+                            </div>
+                            <p>{project.description}</p>
+                        </div>
+                    ))
+                ) : (
+                    <p>No projects provided</p>
+                )}
+            </div>
+            <br />
+            <div className="resume-skills-section">
+                <h4>SKILLS</h4>
+                {skills.length > 0 ? (
+                    <p>{skills.join(', ')}</p>
+                ) : (
+                    <p>No skills provided</p>
+                )}
+            </div>
+
         </section>
     );
 };
