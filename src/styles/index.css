@@ -71,6 +71,41 @@ main {
     background-color: #fafafa;
 }
 
+@media (max-width: 768px) {
+    main {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: stretch;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .cv-preview {
+        min-width: 100%;
+        padding: 1rem;
+        outline: 1px solid black;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        display: block;
+        white-space: initial;
+        font-family: 'Spectral';
+        background-color: white;
+        box-shadow: 5px 5px 5px #9c9c9c;
+        overflow: hidden;
+    }
+
+    .user-input {
+        min-width: 100%;
+        overflow-y: hidden;
+
+    }
+    
+}
+
 .user-input, .cv-preview {
     flex: 1;
     padding: 1rem;
